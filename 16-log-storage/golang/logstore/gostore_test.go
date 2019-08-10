@@ -64,7 +64,7 @@ func Test(t *testing.T) {
 func Range(n int) []OrderID {
 	out := make([]OrderID, n)
 	for i := 0; i < n; i++ {
-		out[i] = OrderID(i)
+		out[i] = OrderID(i + 1)
 	}
 	return out
 }
