@@ -39,7 +39,7 @@ func (l *Log) GetLast(i int) OrderID {
 	}
 
 	if l.count < l.cap { // before first round
-		return l.db[l.next-l.count+i-1]
+		return l.db[i-1]
 	}
 
 	return l.db[(l.next+i-1)%l.cap]
