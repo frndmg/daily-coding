@@ -33,16 +33,25 @@ func MinNHousesDP(costs [][]int, N, K int) int {
 func update(a, b, x dpState) (dpState, dpState) {
 	// a.k != b.k
 	// a.c <= b.c
+
+	// This part is not necesary
+	// Colors are always different
+	// ***
+
+	// if x.k == a.k && x.c < a.c {
+	// 	return x, b
+	// }
+	// if x.k == b.k && x.c < b.c {
+	// 	return a, x
+	// }
+
+	// ***
+
 	if x.c < a.c {
-		if x.k != a.k {
-			return x, a
-		}
-		return x, b
+		return x, a
 	} else if x.c < b.c {
-		if x.k != a.k {
-			return a, x
-		}
-		return x, b
+		return a, x
 	}
+
 	return a, b
 }
