@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "name": "daily-coding-email",
+    "builds": [
+        {
+            "src": "index.py",
+            "use": "@now/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index.py"
+        }
+    ],
+    "env": {
+        "BOT_TOKEN": "@daily-coding-bot-token",
+        "DAILY_CODING_TOKEN": "@daily-coding-token",
+        "DAILY_CODING_ADMIN": "@daily-coding-admin",
+        "DAILY_CODING_CHANNEL": "@daily-coding-channel"
+    }
+}
