@@ -38,7 +38,7 @@ def new_email():
 
     company = m.group('company')
     text = m.group('text')
-    text = re.sub(r'.\n.', ' ', text)
+    text = re.sub(r'(?<=.)\n(?=.)', ' ', text)
 
     msg = """This problem was asked by #{}
 
